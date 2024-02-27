@@ -31,7 +31,11 @@ const Navbar = () => {
                             navItems.map((item, indx) => {
                                 return (
                                     <li key={indx} className="text-white">
-                                        <NavLink to={item.Path}>{item.name}</NavLink>
+                                        <NavLink
+                                            className={({ isActive, isPending }) =>
+                                                isActive ? "text-orange-500 font-bold transition-all duration-200 underline" : "text-white"
+                                            }
+                                            to={item.Path}>{item.name}</NavLink>
                                     </li>
                                 )
                             })
