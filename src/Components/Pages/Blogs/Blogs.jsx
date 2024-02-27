@@ -10,6 +10,10 @@ const Blogs = () => {
             .then(data => setBlogs(data))
     }, [])
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [pageSize, setPageSize] = useState(10);
+    const [showAll, setShowAll] = useState(false);
 
     return (
         <div>
@@ -26,11 +30,19 @@ const Blogs = () => {
                     page category
                 </div>
 
-                <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 mt-20">
+                <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 mt-20 transition-all duration-200">
                     {
-                        blogs.map((blog) => <Blog key={blog.id} blog={blog}></Blog>)
+                        blogs.slice(0, pageSize).map((blog) => <Blog key={blog.id} blog={blog}></Blog>)
                     }
                 </div>
+
+                {
+                    !showAll && (
+                        <div className="flex justify-center my-10">
+                            <button onClick={() => setPageSize(pageSize + 5)} className="btn btn-md bg-black text-orange-500 hover:bg-orange-500 hover:text-black">Show More</button>
+                        </div>
+                    )
+                }
             </div>
             {/* Blogs */}
 
