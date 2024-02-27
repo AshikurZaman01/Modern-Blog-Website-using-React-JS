@@ -45,9 +45,6 @@ const Blogs = () => {
                 }
             </div>
             {/* Blogs */}
-
-
-
         </div>
     );
 };
