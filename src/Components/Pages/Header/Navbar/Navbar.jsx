@@ -6,6 +6,7 @@ import { AiOutlineBars } from "react-icons/ai";
 import { useState } from "react";
 import { FaWindowClose } from "react-icons/fa";
 
+
 const Navbar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,10 +32,13 @@ const Navbar = () => {
                             navItems.map((item, indx) => {
                                 return (
                                     <li key={indx} className="text-white">
-                                        <NavLink
-                                            className={({ isActive, isPending }) =>
-                                                isActive ? "text-orange-500 font-bold transition-all duration-200 underline" : "text-white"
-                                            }
+                                        <NavLink className={({ isActive, isPending }) =>
+                                            isActive
+                                                ? "text-orange-500 underline underline-offset-4 duration-200 transition-all"
+                                                : isPending
+                                                    ? "pending"
+                                                    : ""
+                                        }
                                             to={item.Path}>{item.name}</NavLink>
                                     </li>
                                 )
@@ -74,7 +78,13 @@ const Navbar = () => {
                             navItems.map((item, indx) => {
                                 return (
                                     <li key={indx} className="text-black">
-                                        <NavLink onClick={() => setIsMenuOpen(!isMenuOpen)} to={item.Path}>{item.name}</NavLink>
+                                        <NavLink className={({ isActive, isPending }) =>
+                                            isActive
+                                                ? "text-orange-500 underline underline-offset-4 duration-200 transition-all"
+                                                : isPending
+                                                    ? "pending"
+                                                    : ""
+                                        } onClick={() => setIsMenuOpen(!isMenuOpen)} to={item.Path}>{item.name}</NavLink>
                                     </li>
                                 )
                             })
