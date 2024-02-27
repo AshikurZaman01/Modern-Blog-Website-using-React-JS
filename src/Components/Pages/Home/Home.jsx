@@ -1,8 +1,10 @@
+import About from "../About/About";
+import Banner from "../Header/Banner/Banner";
 
 const Home = () => {
     return (
-        <div className="h-[1000px]">
-            this is home
+        <div>
+            <Banner></Banner>
         </div>
     );
 };
