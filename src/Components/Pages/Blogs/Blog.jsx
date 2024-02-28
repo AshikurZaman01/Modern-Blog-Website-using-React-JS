@@ -3,7 +3,7 @@ import { TbUserSquareRounded } from "react-icons/tb";
 const Blog = ({ blog }) => {
 
     const { id, title, image, content, category, author, authorPic, published_date, reading_time, tags } = blog || {};
-    console.log(blog)
+
     return (
         <div className="shadow-md shadow-gray-500">
             <div>
