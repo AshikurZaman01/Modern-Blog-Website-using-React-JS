@@ -18,8 +18,9 @@ const Blogs = () => {
 
     const handleCategorySelect = (category) => {
         setSelectedCategory(category);
-        setCurrentPage(1); 
+        setCurrentPage(1);
     };
+
 
     return (
         <div>
@@ -27,6 +28,7 @@ const Blogs = () => {
                 <h1 className="text-5xl lg:text-7xl font-bold leading-snug mb-5">Blog Page</h1>
             </div>
 
+            {/* category btn */}
             <div className="flex justify-center items-center mt-8 space-x-4">
                 <button
                     className={`btn ${selectedCategory === null ? 'bg-orange-500 text-black' : 'bg-black text-orange-500'} hover:bg-orange-500 hover:text-black`}
@@ -44,6 +46,8 @@ const Blogs = () => {
                     </button>
                 ))}
             </div>
+            {/* category btn */}
+
 
             {/* Blogs */}
             <div className="max-w-7xl mx-auto">
