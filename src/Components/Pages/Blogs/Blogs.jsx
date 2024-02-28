@@ -26,9 +26,10 @@ const Blogs = () => {
             <div className="max-w-7xl mx-auto">
 
 
-                <div className="my-5">
-                    page category
-                </div>
+                {/* category */}
+                <div>Category</div>
+                {/* category */}
+
 
                 <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 mt-20 transition-all duration-200">
                     {
