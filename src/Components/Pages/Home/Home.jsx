@@ -2,6 +2,7 @@ import About from "../About/About";
 import Blogs from "../Blogs/Blogs";
 import HomeBlogs from "../Blogs/HomeBlogs/HomeBlogs";
 import Banner from "../Header/Banner/Banner";
+import LatestBlog from "../LatestBlog/LatestBlog";
 
 const Home = () => {
     return (
@@ -10,10 +11,12 @@ const Home = () => {
 
             <div className="max-w-7xl mx-auto grid grid-cols-4">
 
-                <section className="col-span-3">
+                <section className="col-span-4 md:col-span-3">
                     <HomeBlogs></HomeBlogs>
                 </section>
-                <section className="col-span-1 bg-blue-500">B</section>
+                <section className="hidden md:block md:col-span-1 mt-8 px-5">
+                    <LatestBlog></LatestBlog>
+                </section>
 
             </div>
         </div>
